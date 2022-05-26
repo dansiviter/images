@@ -4,15 +4,12 @@ contents:
   packages:
   - busybox
   - alpine-baselayout
+  - alpine-keys
+  - apk-tools
+  - libc-utils
 
-accounts:
-  groups:
-  - groupname: nonroot
-    gid: 10000
-  users:
-  - username: nonroot
-    uid: 10000
-  run-as: nonroot
+entrypoint:
+  command: /bin/sh
 
 environment:
   PATH: /usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin

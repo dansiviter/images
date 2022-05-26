@@ -1,7 +1,7 @@
 # JLink base image
 contents:
   repositories:
-  - https://dl-cdn.alpinelinux.org/alpine/v3.15/main
+  - https://dl-cdn.alpinelinux.org/alpine/v3.16/main
   packages:
   - zlib
 
@@ -15,7 +15,7 @@ accounts:
   run-as: nonroot
 
 os-release:
-  version-id: '3.15'
+  version-id: '3.16'
 
 archs:
  - x86_64

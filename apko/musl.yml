@@ -2,8 +2,7 @@ contents:
   repositories:
   - https://dl-cdn.alpinelinux.org/alpine/v3.16/main
   packages:
-  - busybox
-  - alpine-baselayout
+  - musl
 
 accounts:
   groups:
@@ -13,9 +12,6 @@ accounts:
   - username: nonroot
     uid: 10000
   run-as: nonroot
-
-environment:
-  PATH: /usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
 
 os-release:
   version-id: '3.16'
