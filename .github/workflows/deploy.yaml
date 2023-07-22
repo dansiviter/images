@@ -1,6 +1,7 @@
 name: Deploy Images
 on:
   push:
+  workflow_dispatch:
 
 env:
   REGISTRY: ghcr.io/dansiviter
