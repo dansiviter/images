@@ -1,8 +1,8 @@
 # JRE base image
 contents:
   repositories:
-  - https://dl-cdn.alpinelinux.org/alpine/v3.16/main
-  - https://dl-cdn.alpinelinux.org/alpine/v3.16/community
+  - https://dl-cdn.alpinelinux.org/alpine/v3.21/main
+  - https://dl-cdn.alpinelinux.org/alpine/v3.21/community
   packages:
   - openjdk17-jre-headless
 
@@ -17,9 +17,6 @@ accounts:
 
 environment:
   PATH: /usr/lib/jvm/java-17-openjdk/bin/
-
-os-release:
-  version-id: '3.16'
 
 archs:
  - x86_64

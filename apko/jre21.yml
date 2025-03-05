@@ -1,9 +1,10 @@
-# JLink base image
+# JRE base image
 contents:
   repositories:
   - https://dl-cdn.alpinelinux.org/alpine/v3.21/main
+  - https://dl-cdn.alpinelinux.org/alpine/v3.21/community
   packages:
-  - zlib
+  - openjdk21-jre-headless
 
 accounts:
   groups:
@@ -14,6 +15,8 @@ accounts:
     uid: 10000
   run-as: nonroot
 
+environment:
+  PATH: /usr/lib/jvm/java-21-openjdk/bin/
+
 archs:
  - x86_64
- - arm64

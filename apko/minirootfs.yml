@@ -1,6 +1,6 @@
 contents:
   repositories:
-  - https://dl-cdn.alpinelinux.org/alpine/v3.16/main
+  - https://dl-cdn.alpinelinux.org/alpine/v3.21/main
   packages:
   - busybox
   - alpine-baselayout
@@ -13,9 +13,6 @@ entrypoint:
 
 environment:
   PATH: /usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
-
-os-release:
-  version-id: '3.16'
 
 archs:
  - x86_64
