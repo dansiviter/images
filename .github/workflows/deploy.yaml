@@ -85,6 +85,6 @@ jobs:
       with:
         args: >
           publish ./apko/jre21.yml
-          ${{ env.REGISTRY }}/alpine:3.21-jre17
-          ${{ env.REGISTRY }}/alpine:3-jre17
-          ${{ env.REGISTRY }}/alpine:jre17
+          ${{ env.REGISTRY }}/alpine:3.21-jre21
+          ${{ env.REGISTRY }}/alpine:3-jre21
+          ${{ env.REGISTRY }}/alpine:jre21
