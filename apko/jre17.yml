@@ -4,7 +4,7 @@ contents:
   - https://dl-cdn.alpinelinux.org/alpine/v3.21/main
   - https://dl-cdn.alpinelinux.org/alpine/v3.21/community
   packages:
-  - openjdk21-jre-headless
+  - openjdk17-jre-headless
 
 accounts:
   groups:
@@ -16,7 +16,7 @@ accounts:
   run-as: nonroot
 
 environment:
-  PATH: /usr/lib/jvm/java-21-openjdk/bin/
+  PATH: /usr/lib/jvm/java-17-openjdk/bin/
 
 archs:
  - x86_64
