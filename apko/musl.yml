@@ -13,9 +13,6 @@ accounts:
     uid: 10000
   run-as: nonroot
 
-os-release:
-  version-id: '3.21'
-
 archs:
  - x86_64
  - arm64

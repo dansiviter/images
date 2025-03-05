@@ -18,8 +18,5 @@ accounts:
 environment:
   PATH: /usr/lib/jvm/java-21-openjdk/bin/
 
-os-release:
-  version-id: '3.21'
-
 archs:
  - x86_64

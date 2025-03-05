@@ -17,9 +17,6 @@ accounts:
 environment:
   PATH: /usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
 
-os-release:
-  version-id: '3.21'
-
 archs:
  - x86_64
 #  - arm64
