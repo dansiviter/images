@@ -10,7 +10,7 @@ jobs:
   apko:
     runs-on: ubuntu-latest
     container:
-      image: cgr.dev/chainguard/apko:v0.25.1
+      image: cgr.dev/chainguard/apko:0.25.1
     permissions:
       packages: write
       security-events: write
