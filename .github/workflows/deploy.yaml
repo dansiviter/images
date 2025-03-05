@@ -32,15 +32,15 @@ jobs:
 
     - name: Scan for vulnerabilities
       continue-on-error: true
-      uses: snyk/actions/docker@0.3.0
+      uses: snyk/actions/docker@0.4.0
       env:
         SNYK_TOKEN: ${{ secrets.SNYK_TOKEN }}
       with:
-        image: ${{ env.REGISTRY }}/alpine:3.16-minirootfs
+        image: ${{ env.REGISTRY }}/alpine:3.21-minirootfs
         args: --file=./apko/minirootfs.yml
 
     - name: Upload result to GitHub Code Scanning
-      uses: github/codeql-action/upload-sarif@v2
+      uses: github/codeql-action/upload-sarif@v3
       with:
         sarif_file: snyk.sarif
 
