@@ -10,7 +10,7 @@ jobs:
   apko:
     runs-on: ubuntu-latest
     container:
-      image: ghcr.io/chainguard-dev/apko:v0.4.0
+      image: ghcr.io/chainguard-dev/apko:v0.25.1
     permissions:
       packages: write
       security-events: write
@@ -19,16 +19,16 @@ jobs:
       uses: actions/checkout@v3
 
     - name: Registry Login
-      uses: docker://ghcr.io/chainguard-dev/apko:v0.4.0
+      uses: docker://ghcr.io/chainguard-dev/apko:v0.25.1
       with:
         args: login ghcr.io -u ${{ github.actor }} -p ${{ secrets.GITHUB_TOKEN }}
 
     - name: Build MiniRootFS
-      uses: docker://ghcr.io/chainguard-dev/apko:v0.4.0
+      uses: docker://ghcr.io/chainguard-dev/apko:v0.25.1
       with:
         args: >
           publish ./apko/minirootfs.yml
-          ${{ env.REGISTRY }}/alpine:3.16-minirootfs
+          ${{ env.REGISTRY }}/alpine:3.21-minirootfs
           ${{ env.REGISTRY }}/alpine:3-minirootfs
           ${{ env.REGISTRY }}/alpine:minirootfs
 
@@ -47,37 +47,46 @@ jobs:
         sarif_file: snyk.sarif
 
     - name: Build base
-      uses: docker://ghcr.io/chainguard-dev/apko:v0.4.0
+      uses: docker://ghcr.io/chainguard-dev/apko:v0.25.1
       with:
         args: >
           publish ./apko/base.yml
-          ${{ env.REGISTRY }}/alpine:3.16-base
+          ${{ env.REGISTRY }}/alpine:3.21-base
           ${{ env.REGISTRY }}/alpine:3-base
           ${{ env.REGISTRY }}/alpine:base
 
     - name: Build musl
-      uses: docker://ghcr.io/chainguard-dev/apko:v0.4.0
+      uses: docker://ghcr.io/chainguard-dev/apko:v0.25.1
       with:
         args: >
           publish ./apko/musl.yml
-          ${{ env.REGISTRY }}/alpine:3.16-musl
+          ${{ env.REGISTRY }}/alpine:3.21-musl
           ${{ env.REGISTRY }}/alpine:3-musl
           ${{ env.REGISTRY }}/alpine:musl
 
     - name: Build JLink
-      uses: docker://ghcr.io/chainguard-dev/apko:v0.4.0
+      uses: docker://ghcr.io/chainguard-dev/apko:v0.25.1
       with:
         args: >
           publish ./apko/jlink.yml
-          ${{ env.REGISTRY }}/alpine:3.16-jlink
+          ${{ env.REGISTRY }}/alpine:3.21-jlink
           ${{ env.REGISTRY }}/alpine:3-jlink
           ${{ env.REGISTRY }}/alpine:jlink
 
     - name: Build JRE17
-      uses: docker://ghcr.io/chainguard-dev/apko:v0.4.0
+      uses: docker://ghcr.io/chainguard-dev/apko:v0.25.1
       with:
         args: >
           publish ./apko/jre17.yml
-          ${{ env.REGISTRY }}/alpine:3.16-jre17
+          ${{ env.REGISTRY }}/alpine:3.21-jre17
+          ${{ env.REGISTRY }}/alpine:3-jre17
+          ${{ env.REGISTRY }}/alpine:jre17
+
+    - name: Build JRE21
+      uses: docker://ghcr.io/chainguard-dev/apko:v0.25.1
+      with:
+        args: >
+          publish ./apko/jre21.yml
+          ${{ env.REGISTRY }}/alpine:3.21-jre17
           ${{ env.REGISTRY }}/alpine:3-jre17
           ${{ env.REGISTRY }}/alpine:jre17
