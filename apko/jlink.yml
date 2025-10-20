@@ -1,7 +1,7 @@
 # JLink base image
 contents:
   repositories:
-  - https://dl-cdn.alpinelinux.org/alpine/v3.21/main
+  - https://dl-cdn.alpinelinux.org/alpine/v3.22/main
   packages:
   - zlib
 
