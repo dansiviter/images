@@ -1,8 +1,7 @@
-# JRE base image
 contents:
   repositories:
-  - https://dl-cdn.alpinelinux.org/alpine/v3.21/main
-  - https://dl-cdn.alpinelinux.org/alpine/v3.21/community
+  - https://dl-cdn.alpinelinux.org/alpine/v3.22/main
+  - https://dl-cdn.alpinelinux.org/alpine/v3.22/community
   packages:
   - openjdk21-jre-headless
 

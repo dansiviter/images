@@ -26,7 +26,7 @@ jobs:
       with:
         args: >
           publish ./apko/minirootfs.yml
-          ${{ env.REGISTRY }}/alpine:3.21-minirootfs
+          ${{ env.REGISTRY }}/alpine:3.22-minirootfs
           ${{ env.REGISTRY }}/alpine:3-minirootfs
           ${{ env.REGISTRY }}/alpine:minirootfs
 
@@ -36,7 +36,7 @@ jobs:
       env:
         SNYK_TOKEN: ${{ secrets.SNYK_TOKEN }}
       with:
-        image: ${{ env.REGISTRY }}/alpine:3.21-minirootfs
+        image: ${{ env.REGISTRY }}/alpine:3.22-minirootfs
         args: --file=./apko/minirootfs.yml
 
     - name: Upload result to GitHub Code Scanning
@@ -49,7 +49,7 @@ jobs:
       with:
         args: >
           publish ./apko/base.yml
-          ${{ env.REGISTRY }}/alpine:3.21-base
+          ${{ env.REGISTRY }}/alpine:3.22-base
           ${{ env.REGISTRY }}/alpine:3-base
           ${{ env.REGISTRY }}/alpine:base
 
@@ -58,7 +58,7 @@ jobs:
       with:
         args: >
           publish ./apko/musl.yml
-          ${{ env.REGISTRY }}/alpine:3.21-musl
+          ${{ env.REGISTRY }}/alpine:3.22-musl
           ${{ env.REGISTRY }}/alpine:3-musl
           ${{ env.REGISTRY }}/alpine:musl
 
@@ -67,7 +67,7 @@ jobs:
       with:
         args: >
           publish ./apko/jlink.yml
-          ${{ env.REGISTRY }}/alpine:3.21-jlink
+          ${{ env.REGISTRY }}/alpine:3.22-jlink
           ${{ env.REGISTRY }}/alpine:3-jlink
           ${{ env.REGISTRY }}/alpine:jlink
 
@@ -76,7 +76,7 @@ jobs:
       with:
         args: >
           publish ./apko/jre17.yml
-          ${{ env.REGISTRY }}/alpine:3.21-jre17
+          ${{ env.REGISTRY }}/alpine:3.22-jre17
           ${{ env.REGISTRY }}/alpine:3-jre17
           ${{ env.REGISTRY }}/alpine:jre17
 
@@ -85,6 +85,6 @@ jobs:
       with:
         args: >
           publish ./apko/jre21.yml
-          ${{ env.REGISTRY }}/alpine:3.21-jre21
+          ${{ env.REGISTRY }}/alpine:3.22-jre21
           ${{ env.REGISTRY }}/alpine:3-jre21
           ${{ env.REGISTRY }}/alpine:jre21
