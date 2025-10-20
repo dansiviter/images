@@ -77,7 +77,7 @@ jobs:
 
     - name: Scan for vulnerabilities
       continue-on-error: true
-      uses: snyk/actions/docker@1.0.0
+      uses: snyk/actions/docker@v1.0.0
       env:
         SNYK_TOKEN: ${{ secrets.SNYK_TOKEN }}
       with:
