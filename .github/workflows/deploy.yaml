@@ -30,20 +30,6 @@ jobs:
           ${{ env.REGISTRY }}/alpine:3-minirootfs
           ${{ env.REGISTRY }}/alpine:minirootfs
 
-    - name: Scan for vulnerabilities
-      continue-on-error: true
-      uses: snyk/actions/docker@0.4.0
-      env:
-        SNYK_TOKEN: ${{ secrets.SNYK_TOKEN }}
-      with:
-        image: ${{ env.REGISTRY }}/alpine:3.22-minirootfs
-        args: --file=./apko/minirootfs.yml
-
-    - name: Upload result to GitHub Code Scanning
-      uses: github/codeql-action/upload-sarif@v3
-      with:
-        sarif_file: snyk.sarif
-
     - name: Build base
       uses: docker://cgr.dev/chainguard/apko
       with:
@@ -88,3 +74,16 @@ jobs:
           ${{ env.REGISTRY }}/alpine:3.22-jre21
           ${{ env.REGISTRY }}/alpine:3-jre21
           ${{ env.REGISTRY }}/alpine:jre21
+
+    - name: Scan for vulnerabilities
+      continue-on-error: true
+      uses: snyk/actions/docker@1.0.0
+      env:
+        SNYK_TOKEN: ${{ secrets.SNYK_TOKEN }}
+      with:
+        image: ${{ env.REGISTRY }}/alpine:3.22-jlink
+
+    - name: Upload result to GitHub Code Scanning
+      uses: github/codeql-action/upload-sarif@v3
+      with:
+        sarif_file: snyk.sarif
